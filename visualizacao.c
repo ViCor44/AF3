@@ -7,11 +7,11 @@ void Configtela()
 {
 COORD outbuff;
 outbuff.X = 150;
-outbuff.Y = 50;
+outbuff.Y = 45;
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 SetConsoleScreenBufferSize(hConsole, outbuff);
 Sleep(130);
-SMALL_RECT windowSize = {0, 0, 149, 49}; 
+SMALL_RECT windowSize = {0, 0, 149, 44}; 
 SetConsoleWindowInfo(hConsole, TRUE, &windowSize);
 }
 
@@ -32,8 +32,7 @@ void CriaLinha()
 /* Funcao para criar retangulos*/
 void CriarRetangulo(int x, int y, int l, int h)
 {	
-	int i;
-	system("@cls||clear");
+	int i;	
     gotoxy(x,y);
     printf("+");
     for(i= 1; i < l - 1; i++)
@@ -61,6 +60,5 @@ void CriarRetangulo(int x, int y, int l, int h)
     	printf("|");
 	}  
 	gotoxy(x + l - 1,y + h - 1);
-    printf("+\n");
-    Sleep(1);
+    printf("+\n");    
 }
