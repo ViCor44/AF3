@@ -25,7 +25,16 @@ void AnalisaTexto(char *comando)
 	h = atoi(strdup(strtok(NULL, " ,+")));
 	y = (40-y-h)+1;
 	
-	if(ordem != "create" || ordem != "moveleft" || ordem != "moveright" || ordem != "delete")
+	
+	if(strcmp(ordem, "create") == 0)
+		CriarRetangulo(x, y, w, h);
+	else if(strcmp(ordem, "moveleft") == 0)
+		MoverEsquerda(x, y, ml);
+	else if(strcmp(ordem, "moveright") == 0)
+		MoverDireita(x, y, mr);
+	else if(strcmp(ordem, "delete") == 0)
+		ApagarRetangulo(x, y);
+	else
 	{
 		printf("\n  Comando invalido!\n");
 		printf("  Comandos aceites: create, moveleft, moveright, delete\n");
@@ -34,12 +43,4 @@ void AnalisaTexto(char *comando)
 		system("@cls||clear");
 		InserirComando();
 	}
-	if(strcmp(ordem, "create") == 0)
-		CriarRetangulo(x, y, w, h);
-	if(strcmp(ordem, "moveleft") == 0)
-		MoverEsquerda(x, y, ml);
-	if(strcmp(ordem, "moveright") == 0)
-		MoverDireita(x, y, mr);
-	if(strcmp(ordem, "delete") == 0)
-		ApagarRetangulo(x, y);
 }
