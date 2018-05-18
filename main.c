@@ -5,9 +5,10 @@
 
 int main()
 {
-    Configtela();
-    remove_scrollbar();	
-    InserirComando();			
+	Configtela();
+    remove_scrollbar();
+    InserirComando();
     system("pause >nul");
+    release();
     return 0;
 }
